@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/video_style.css"/>
+		<script src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				height: 100%;
+				width: 96%;
+				padding-bottom: 1rem;
+				margin: 0 auto;
+				font-size: 0.4rem;
+				background: #fff;
+				overflow-x:hidden;
+			}
+			
+			#content {
+				width: 95%;
+				height: 100%;
+				padding: 0;
+				margin: 10px auto;
+			}
+			
+			#footer {
+				width: 100%;
+				position: fixed;
+				bottom: -0.83rem;
+				left: 0;
+			}
+			
+			#footer .isShow {
+				height: 0.8rem;
+				padding-right: 0.2rem;
+			}
+			
+			#footer .isShow img {
+				float: right;
+				width: 0.6rem !important;
+				height: 0.6rem !important;
+				display: none;
+			}
+			
+			#footer .isShow img.active {
+				display: block;
+			}
+            img {
+                width: 100%;
+            }
+			.tab {
+				width: 100%;
+				height: 0.83rem;
+				overflow: hidden;
+				background: #fff;
+				list-style: none;
+			}
+			
+			.tab li {
+				width: 33.3%;
+				float: left;
+				text-align: center;
+			}
+			
+			.tab img {
+				height: 0.4rem !important;
+				width: 0.4rem !important;
+				display: inline-block;
+				padding-top: 0.08rem;
+			}
+			
+			.tab p {
+				font-size: 0.2rem;
+				position: relative;
+				top: -0.08rem;
+			}
+			
+			.title {
+				font-size: 0.4rem;
+			}
+			
+			.info_box {
+				overflow: hidden;
+				line-height: 0.5rem;
+				padding-bottom: 0.1rem;
+			}
+			
+			.author {
+				font-size: 0.3rem;
+			}
+			
+			.time {
+				font-size: 0.2rem;
+				padding-left: 0.1rem;
+				color: #a9a5a5;
+			}
+			#text{
+				font-size: 0.3rem;
+			}
+			#zanshang_box{
+				text-align: center;
+				font-size: 0.3rem;
+			}
+			#zanshang{
+				display: inline-block;
+				padding:0.05rem 0.2rem;
+				border:1px solid #1a9afd ;
+				color: #1a9afd;
+				font-size: 0.25rem;
+				border-radius:0.1rem ;
+			}
+			#home{
+				height: 0.6rem !important;
+				width: 0.6rem !important;
+				position: fixed;
+				bottom: 0.2rem;
+				left: 0.2rem;
+			}
+		</style>
+		<script>
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth;
+						if(!clientWidth) return;
+						if(clientWidth >= 640) {
+							docEl.style.fontSize = '100px';
+						} else {
+							docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+						}
+					};
+				if(!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+		</script>
+	</head>
+
+	<body>
+		<div id="content">
+			<h3 class="title">为儿童网</h3>
+			<div class="info_box">
+				<span class="author">345</span>
+				<span class="time">2018-06-25</span>
+			</div>
+			<div id="text">
+				<div>
+				<div>
+					<div>
+						<div style="margin-top: 10px; margin-bottom: 10px;">
+							<div style="display: inline-block; width: 100%;box-sizing: border-box; border-color: rgb(26, 154, 253); border-style: solid; border-width: 2px; background-color: transparent;">
+								<div>
+									<div style="padding: 10px;">
+										<div style="text-align: center;">
+											<div>输入文字输入文字<br/>输入文字输入文字</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div><div>
+				<div>
+					<div>
+						<div style="margin-top: 10px; margin-bottom: 10px;">
+							<div style="border: 5px solid rgb(26, 154, 253); padding: 10px; background-color: rgb(63, 59, 58);">
+								<div>
+									<div>
+										<div style="text-align: center; padding: 10px; font-size: 120%; color: rgb(255, 255, 255);">
+											<div>输入文字输入文字<br/>输入文字输入文字</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div><div class="audio">
+			<div style="display:none" class="audio_url">https://51sjfc.com/sjfc_artic_images/chapter_img/1529917190.mp3</div>
+			<div style="max-width: 100%;box-sizing: border-box;-webkit-box-sizing: border-box;word-wrap: break-word;border: 1px solid #e6e6e6;border-radius: 4px;-webkit-border-radius: 4px;color: #333;line-height: 1.6;">
+				<div style="padding: 14px 20px 6px;background-color: #fdfdfd;    font-size: 16px;position: relative;outline: 0;-webkit-tap-highlight-color: rgba(0,0,0,0);    display: -webkit-box;display: -webkit-flex;display: flex; -webkit-box-align: center;-webkit-align-items: center;align-items: center;">
+					<span style="margin: -10px 15px 0 0;position: relative;z-index: 1;display: block;">
+					<em style="outline:0;background: transparent url(https://51sjfc.com/sjfc_artic_images/img/play.png) no-repeat 0 0;width: 42px;height: 42px;vertical-align: middle;display: inline-block;-webkit-background-size: 42px auto;background-size: 42px auto;overflow: hidden;color: transparent;"></em>
+				</span>
+					<span style="position: relative;outline: 0;-webkit-tap-highlight-color: rgba(0,0,0,0);display: block;    -webkit-box-flex: 1;-webkit-flex: 1;flex: 1;word-wrap: break-word;word-break: break-all;">
+					<span style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 1;padding-bottom: 6px;font-size: 12px;color: #888;" class="audio_name">发表过</span>
+					<span style="height: 2px;margin-right: 7px;position: relative;outline: 0;-webkit-tap-highlight-color: rgba(0,0,0,0);display: block;">
+						<span style="height: 100%;background-color: #ebebeb;position: relative;width: 100%;padding-left: 7px;-webkit-box-sizing: initial!important;box-sizing: initial!important;display: block;">
+							<span style="background: #09bb07;height: 100%;position: absolute;top: 0;left: 0;z-index: 1;"></span>
+					<span style="position: absolute;top: 0;left: 0;bottom: 0;background-color: #d9d9d9;width: 100%;"></span>
+					</span>
+					<span style="z-index: 2;position: absolute;width: 14px;height: 14px;border-radius: 50%;-moz-border-radius: 50%;-webkit-border-radius: 50%;background-color: rgba(9,187,7,0.15);top: 50%;margin-top: -7px;margin-left: -3.5px;cursor: pointer;outline: 0;-webkit-tap-highlight-color: rgba(0,0,0,0);display: block;">
+							<em style="width: 8px;height: 8px;border-radius: 50%;-moz-border-radius: 50%;-webkit-border-radius: 50%;background-color: #09bb07;position: absolute;left: 50%;top: 50%;margin-top: -4px;margin-left: -4px;"></em>
+						</span>
+					</span>
+					<span style="color: #b2b2b2;overflow: hidden;padding-top: 6px;font-size: 12px;display: block;">
+						<em style="font-weight: 400;font-style: normal;float: left;">00:00</em>
+						<em style="font-weight: 400;font-style: normal;float: right;"></em>
+					</span>
+					</span>
+				</div>
+			</div></div><p><br/></p>
+			</div>
+		</div>
+		<!----<div id="zanshang_box"><span id="zanshang">ཞལ་འདེབས།</span></div>----->
+		<img id="home" src="../img/home.png" />
+	</body>
+	<script src="../js/index.js"></script>
+    <script src="../js/audio_index.js"></script>
+    <script src="../js/video_index.js"></script>
+</html>

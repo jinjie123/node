@@ -1,0 +1,127 @@
+<%-include ../public/header.ejs%>
+
+<!--[if lt IE 7 ]> <body class="ie ie6"> <![endif]-->
+<!--[if IE 7 ]> <body class="ie ie7 "> <![endif]-->
+<!--[if IE 8 ]> <body class="ie ie8 "> <![endif]-->
+<!--[if IE 9 ]> <body class="ie ie9 "> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<body class="">
+<!--<![endif]-->
+
+<div class="navbar">
+    <div class="navbar-inner">
+        <ul class="nav pull-right">
+
+            <li><a href="#" class="hidden-phone visible-tablet visible-desktop" role="button">Settings</a></li>
+            <li id="fat-menu" class="dropdown">
+                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="icon-user"></i> Jack Smith
+                    <i class="icon-caret-down"></i>
+                </a>
+
+                <ul class="dropdown-menu">
+                    <li><a tabindex="-1" href="#">My Account</a></li>
+                    <li class="divider"></li>
+                    <li><a tabindex="-1" class="visible-phone" href="#">Settings</a></li>
+                    <li class="divider visible-phone"></li>
+                    <li><a tabindex="-1" href="sign-in.html">Logout</a></li>
+                </ul>
+            </li>
+
+        </ul>
+        <a class="brand" href="index.html"><span class="first">Your</span> <span class="second">Company</span></a>
+    </div>
+</div>
+
+
+
+
+<!--左侧菜单-->
+
+<%-include ../public/nav.ejs%>
+
+
+
+<div class="content">
+
+    <div class="header">
+
+        <h1 class="page-title">管理员列表</h1>
+    </div>
+
+    <ul class="breadcrumb">
+        <li><a href="index.html">Home</a> <span class="divider">/</span></li>
+        <li class="active">Users</li>
+    </ul>
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+
+            <div class="btn-toolbar">
+                <button class="btn btn-primary"><i class="icon-plus"></i><a href="<%=host%>/admin/administrators/add">增加管理员</a></button>
+
+                <div class="btn-group">
+                </div>
+            </div>
+            <div class="well">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>头像</th>
+                        <th>用户名</th>
+                        <th>手机号码</th>
+                        <th>邮箱</th>
+                        <th>状态</th>
+                        <th>增加时间</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <%for(var i=0;i<list.length;i++){%>
+                    <tr>
+                        <td><img src="<%=host%>/<%=list[i].face%>" alt="" style="width: 30px"/></td>
+                        <td><%=list[i].username%></td>
+                        <td><%=list[i].tel%></td>
+                        <td><%=list[i].email%></td>
+                        <td><%=list[i].status%></td>
+                        <td><%=list[i].addtime%></td>
+                        <td>
+                            <a href="<%=host%>/admin/administrators/edit?id=<%=list[i]._id%>"><i class="icon-pencil"></i></a>
+
+                            <a href="<%=host%>/admin/administrators/delete?id=<%=list[i]._id%>"><i class="icon-remove"></i></a>
+                        </td>
+                    </tr>
+
+
+
+                    <%}%>
+
+
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+<script src="<%=host%>/lib/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript">
+    $("[rel=tooltip]").tooltip();
+    $(function() {
+        $('.demo-cancel-click').click(function(){return false;});
+    });
+</script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>订单列表</title>
+</head>
+<style>
+    table{
+        width: 100%;
+        text-align: center;
+        border-collapse: collapse;
+    }
+    table thead{
+        background: black;
+        color: white;
+    }
+    table tr{
+        height: 40px;
+    }
+    a{
+        color: red;
+        text-decoration: none;
+    }
+</style>
+<body>
+    <table border="1" cellspacing="0" cellpadding="0">
+        <thead>
+            <tr>
+                <td>id</td>
+                <td>订单号</td>
+                <td>产品ID</td>
+                <td>产品名</td>
+                <td>价格</td>
+                <td>数量</td>
+                <td>总价</td>
+                <td>添加订单时间</td>
+                <td>用户状态</td>
+                <td>用户ID</td>
+                <td>用户名</td>
+                <td>用户电话</td>
+                <td>用户地址</td>
+            </tr>
+        </thead>
+        <tbody>
+        <%for(var i=0;i<msg.length;i++){%>
+        <tr>
+            <td><%=msg[i]._id%></td>
+            <td><%=msg[i].order_id%></td>
+            <td><%=msg[i].product_id%></td>
+            <td><%=msg[i].product_title%></td>
+            <td><%=msg[i].price%></td>
+            <td><%=msg[i].count%></td>
+            <td><%=msg[i].all_price%></td>
+            <td><%=msg[i].add_time%></td>
+            <td><%=msg[i].status%></td>
+            <td><%=msg[i].user_id%></td>
+            <td><%=msg[i].username%></td>
+            <td><%=msg[i].tel%></td>
+            <td><%=msg[i].address%></td>
+        </tr>
+        <%}%>
+        </tbody>
+    </table>
+</body>
+</html>

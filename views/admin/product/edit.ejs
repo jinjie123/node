@@ -1,0 +1,101 @@
+<%-include ../public/header.ejs%>
+
+<script src="<%=host%>/xheditor/jquery/jquery-1.11.2.min.js" charset="utf-8"></script>
+<script src="<%=host%>/xheditor/xheditor-1.2.2.min.js" charset="utf-8"></script>
+<script src="<%=host%>/xheditor/xheditor_lang/zh-cn.js" charset="utf-8"></script>
+
+<!--[if lt IE 7 ]> <body class="ie ie6"> <![endif]-->
+<!--[if IE 7 ]> <body class="ie ie7 "> <![endif]-->
+<!--[if IE 8 ]> <body class="ie ie8 "> <![endif]-->
+<!--[if IE 9 ]> <body class="ie ie9 "> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<body class="">
+<!--<![endif]-->
+
+
+<%-include ../public/navbar.ejs%>
+
+
+
+
+
+<%-include ../public/nav.ejs%>
+
+
+
+<div class="content">
+
+    <div class="header">
+
+        <h1 class="page-title">修改商品</h1>
+    </div>
+
+    <ul class="breadcrumb">
+        <li><a href="#">起始页</a> <span class="divider">/</span></li>
+        <li><a href="#">新闻列表</a> <span class="divider">/</span></li>
+        <li class="active">修改商品</li>
+    </ul>
+
+    <div class="container-fluid">
+        <form id="tab" method="post" action="<%=host%>/admin/product/doEdit"  enctype="multipart/form-data">
+            <label>商品名称</label>
+            <input name="title" type="text" value="<%=list.title%>" class="input-xlarge">
+
+            <label>旧价格</label>
+            <input name="old_price" type="text" value="<%=list.old_price%>" class="input-xlarge">
+
+            <label>新价格</label>
+            <input name="price" type="text" value="<%=list.price%>" class="input-xlarge">
+
+            <label>起送价</label>
+            <input name="start_price" type="text" value="<%=list.start_price%>" class="input-xlarge">
+
+            <label>评分</label>
+            <input name="grade" type="text" value="<%=list.grade%>" class="input-xlarge">
+
+            <label>商家地址</label>
+            <input name="address" type="text" value="<%=list.address%>" class="input-xlarge">
+
+            <label>图片</label>
+            <img src="<%=host%>/<%=list.img%>" width="50" height="50">
+            <input type="file" name="img"/>
+
+            <label>描述</label>
+            <textarea name="description" id="" style="width: 600px; height: 60px;"><%=list.description%></textarea>
+
+            <label>文章详情</label>
+            <textarea  name="content" id="content"><%=list.content%></textarea>
+
+
+            <br/>
+
+            <input type="hidden" name="id" value="<%=list._id%>"/>
+
+            <input type="submit" value="提交"/>
+        </form>
+    </div>
+</div>
+
+
+
+<script src="<%=host%>/lib/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript">
+    $("[rel=tooltip]").tooltip();
+    $(function() {
+        $('.demo-cancel-click').click(function(){return false;});
+    });
+
+    $('#content').xheditor({
+        html5Upload: false,
+        tools:'full',
+        skin:'default',
+        width:500, height:400,
+        upImgUrl:"<%=host%>/admin/article/upload",  /*图片上传post的路径*/
+        upImgExt:"jpg,jpeg,gif,png"
+    });
+</script>
+
+</body>
+</html>
+
+

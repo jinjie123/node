@@ -1,0 +1,91 @@
+<%-include ../public/header.ejs%>
+
+
+<script src="<%=host%>/xheditor/jquery/jquery-1.11.2.min.js" charset="utf-8"></script>
+<script src="<%=host%>/xheditor/xheditor-1.2.2.min.js" charset="utf-8"></script>
+<script src="<%=host%>/xheditor/xheditor_lang/zh-cn.js" charset="utf-8"></script>
+
+
+<!--[if lt IE 7 ]> <body class="ie ie6"> <![endif]-->
+<!--[if IE 7 ]> <body class="ie ie7 "> <![endif]-->
+<!--[if IE 8 ]> <body class="ie ie8 "> <![endif]-->
+<!--[if IE 9 ]> <body class="ie ie9 "> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<body class="">
+<!--<![endif]-->
+
+
+<%-include ../public/navbar.ejs%>
+
+
+
+
+
+<%-include ../public/nav.ejs%>
+
+
+
+<div class="content">
+
+    <div class="header">
+
+        <h1 class="page-title">增加新闻</h1>
+    </div>
+
+    <ul class="breadcrumb">
+        <li><a href="#">起始页</a> <span class="divider">/</span></li>
+        <li><a href="#">新闻列表</a> <span class="divider">/</span></li>
+        <li class="active">增加新闻</li>
+    </ul>
+
+    <div class="container-fluid">
+        <form id="tab" method="post" action="<%=host%>/admin/article/doAdd"  enctype="multipart/form-data">
+            <label>新闻标题</label>
+            <input name="title" type="text" value="" class="input-xlarge">
+
+
+            <label>作者</label>
+            <input name="author" type="text" value="John" class="input-xlarge">
+
+            <label>展示图片</label>
+            <input type="file" name="face"/>
+
+            <label>描述</label>
+            <textarea name="description" id="" style="width: 600px; height: 60px;"></textarea>
+
+            <label>文章详情</label>
+            <textarea id="content"   name="content"></textarea>
+
+            <label>追加时间</label>
+            <input type="date" name="add_time" class="input-xlarge"/>
+            <br/>
+
+            <input type="submit" value="提交"/>
+        </form>
+    </div>
+</div>
+
+
+
+<script src="<%=host%>/lib/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript">
+    $("[rel=tooltip]").tooltip();
+    $(function() {
+        $('.demo-cancel-click').click(function(){return false;});
+    });
+
+    $('#content').xheditor({
+        html5Upload: false,
+        tools:'full',
+        skin:'default',
+        width:500, height:400,
+        upImgUrl:"<%=host%>/admin/article/upload",  /*图片上传post的路径*/
+        upImgExt:"jpg,jpeg,gif,png"
+    });
+
+</script>
+
+</body>
+</html>
+
+
